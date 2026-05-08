@@ -305,7 +305,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </form>
 
       <div class="login-footer">
-        默认账号: admin / 密码: admin123
+        默认账号: admin / 密码: admin123  生产环境请删掉此行
       </div>
     </div>
   </div>
