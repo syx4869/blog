@@ -21,15 +21,6 @@ function getAboutData($pdo) {
         ];
     }
 
-    // 技能
-    $skills = [];
-    try {
-        $stmt = $pdo->query("SELECT * FROM about_skills ORDER BY sort ASC, id ASC");
-        $skills = $stmt->fetchAll();
-    } catch (PDOException $e) {
-        // 表可能不存在，返回空数组
-    }
-
     // 经历
     $timeline = [];
     try {
@@ -79,7 +70,6 @@ function getAboutData($pdo) {
             'github' => $info['github'] ?? '',
             'wechat' => $info['wechat'] ?? ''
         ],
-        'skills' => $skills,
         'timeline' => $timeline,
         'projects' => $projects,
         'interests' => $interests,

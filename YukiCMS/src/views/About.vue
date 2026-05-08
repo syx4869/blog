@@ -33,29 +33,6 @@
       </div>
     </section>
 
-    <!-- 专业技能展示 -->
-    <section class="skills-section" v-if="skillCategories.length > 0">
-      <div class="container">
-        <h2 class="section-title">专业技能</h2>
-        <div class="skills-grid">
-          <div class="skill-category" v-for="category in skillCategories" :key="category.name">
-            <h3 class="category-name">{{ category.name }}</h3>
-            <div class="skill-items">
-              <div class="skill-item" v-for="skill in category.skills" :key="skill.name">
-                <div class="skill-header">
-                  <span class="skill-name">{{ skill.name }}</span>
-                  <span class="skill-level">{{ skill.level }}%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-fill" :style="{ width: skill.level + '%' }"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- 经历时间线 -->
     <section class="timeline-section" v-if="timelineItems.length > 0">
       <div class="container">
@@ -154,7 +131,6 @@ import { aboutApi } from '../services/api'
 
 const aboutData = ref({
   info: null,
-  skills: [],
   timeline: [],
   projects: [],
   interests: [],
@@ -162,21 +138,6 @@ const aboutData = ref({
 })
 
 const loading = ref(true)
-
-// 将技能按分类分组
-const skillCategories = computed(() => {
-  const categories = {}
-  aboutData.value.skills.forEach(skill => {
-    if (!categories[skill.category]) {
-      categories[skill.category] = {
-        name: skill.category,
-        skills: []
-      }
-    }
-    categories[skill.category].skills.push(skill)
-  })
-  return Object.values(categories)
-})
 
 const timelineItems = computed(() => aboutData.value.timeline)
 
@@ -347,71 +308,6 @@ onMounted(() => {
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto 16px;
-}
-
-/* 专业技能展示 */
-.skills-section {
-  padding: 80px 0;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
-}
-
-.skill-category {
-  background: #1e1e24;
-  border: 1px solid #2a2a30;
-  border-radius: 10px;
-  padding: 24px;
-}
-
-.category-name {
-  font-size: 1.1rem;
-  color: #e4e4e7;
-  font-weight: 600;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #2a2a30;
-}
-
-.skill-items {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 6px;
-}
-
-.skill-name {
-  font-size: 0.9rem;
-  color: #d4d4d8;
-}
-
-.skill-level {
-  font-size: 0.8rem;
-  color: #71717a;
-  font-weight: 500;
-}
-
-.skill-bar {
-  height: 6px;
-  background: #27272a;
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.skill-fill {
-  height: 100%;
-  background: #3b82f6;
-  border-radius: 3px;
-  transition: width 1s ease;
 }
 
 /* 经历时间线 */

@@ -146,22 +146,7 @@ CREATE TABLE IF NOT EXISTS `about_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='关于信息表';
 
 -- ============================================
--- 10. 关于我-技能表
--- ============================================
-CREATE TABLE IF NOT EXISTS `about_skills` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `category` varchar(50) NOT NULL COMMENT '技能分类',
-  `name` varchar(100) NOT NULL COMMENT '技能名称',
-  `level` int(11) DEFAULT 0 COMMENT '熟练度 0-100',
-  `sort` int(11) DEFAULT 0 COMMENT '排序',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `category` (`category`),
-  KEY `sort` (`sort`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='关于我-技能表';
-
--- ============================================
--- 11. 关于我-经历表
+-- 10. 关于我-经历表
 -- ============================================
 CREATE TABLE IF NOT EXISTS `about_timeline` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
