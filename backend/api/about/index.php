@@ -10,15 +10,7 @@ function getAboutData($pdo) {
     $info = $stmt->fetch();
 
     if (!$info) {
-        $info = [
-            'name' => '博主',
-            'title' => '全栈开发工程师',
-            'bio' => '一个热爱技术、喜欢折腾的人。',
-            'avatar' => '',
-            'email' => '',
-            'github' => '',
-            'wechat' => ''
-        ];
+        jsonResponse(404, '关于信息未配置');
     }
 
     // 经历
