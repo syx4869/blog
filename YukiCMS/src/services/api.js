@@ -1,5 +1,5 @@
 // ==================== 配置 ====================
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost/api'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://8.138.148.245/api'
 const REQUEST_TIMEOUT = 15000
 
 // ==================== 通用请求函数 ====================
