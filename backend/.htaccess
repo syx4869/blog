@@ -1,0 +1,20 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^api/home/welcome/?$ api/home/welcome.php [QSA,L]
+RewriteRule ^api/home/stats/?$ api/home/stats.php [QSA,L]
+RewriteRule ^api/articles/?$ api/articles/index.php [QSA,L]
+RewriteRule ^api/articles/create/?$ api/articles/create.php [QSA,L]
+RewriteRule ^api/articles/(\d+)/?$ api/articles/view.php?id=$1 [QSA,L]
+RewriteRule ^api/articles/(\d+)/update/?$ api/articles/update.php?id=$1 [QSA,L]
+RewriteRule ^api/articles/(\d+)/delete/?$ api/articles/delete.php?id=$1 [QSA,L]
+RewriteRule ^api/articles/(\d+)/like/?$ api/articles/like.php?id=$1 [QSA,L]
+RewriteRule ^api/articles/(\d+)/comments/?$ api/articles/comments.php?id=$1 [QSA,L]
+RewriteRule ^api/articles/(\d+)/comment/?$ api/articles/comment.php?id=$1 [QSA,L]
+RewriteRule ^api/articles/upload/?$ api/articles/upload.php [QSA,L]
+RewriteRule ^api/categories/?$ api/categories/index.php [QSA,L]
+RewriteRule ^api/tags/?$ api/tags/index.php [QSA,L]
+RewriteRule ^api/fun/?$ api/fun/index.php [QSA,L]
+RewriteRule ^api/about/?$ api/about/index.php [QSA,L]
