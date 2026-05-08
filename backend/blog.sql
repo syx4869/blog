@@ -185,8 +185,6 @@ CREATE TABLE IF NOT EXISTS `about_projects` (
   `icon` varchar(20) DEFAULT '?' COMMENT '图标',
   `description` text DEFAULT NULL COMMENT '项目描述',
   `stack` varchar(255) DEFAULT NULL COMMENT '技术栈，逗号分隔',
-  `stars` int(11) DEFAULT 0 COMMENT 'Star数',
-  `views` varchar(50) DEFAULT '0' COMMENT '浏览量',
   `demo_url` varchar(255) DEFAULT NULL COMMENT '演示链接',
   `repo_url` varchar(255) DEFAULT NULL COMMENT '源码链接',
   `sort` int(11) DEFAULT 0 COMMENT '排序',

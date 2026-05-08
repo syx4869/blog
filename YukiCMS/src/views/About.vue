@@ -92,9 +92,9 @@
             <div class="project-stack">
               <span class="stack-tag" v-for="tech in project.stackArray" :key="tech">{{ tech }}</span>
             </div>
-            <div class="project-stats">
-              <span class="stat">⭐ {{ project.stars }}</span>
-              <span class="stat">👁️ {{ project.views }}</span>
+            <div class="project-links">
+              <a v-if="project.demo_url" :href="project.demo_url" class="project-link" target="_blank">演示</a>
+              <a v-if="project.repo_url" :href="project.repo_url" class="project-link" target="_blank">源码</a>
             </div>
           </div>
         </div>
@@ -596,13 +596,6 @@ onMounted(() => {
   border-radius: 4px;
   font-size: 0.75rem;
   color: #71717a;
-}
-
-.project-stats {
-  display: flex;
-  gap: 16px;
-  font-size: 0.8rem;
-  color: #52525b;
 }
 
 /* 兴趣与价值观 */
