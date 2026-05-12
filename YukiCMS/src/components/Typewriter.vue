@@ -41,6 +41,10 @@ let timerId = null
 function type() {
   const currentText = props.texts[currentLineIndex.value]
 
+  if (!currentText || typeof currentText !== 'string') {
+    return
+  }
+
   if (isDeleting.value) {
     displayedText.value = currentText.substring(0, currentCharIndex.value - 1)
     currentCharIndex.value--
