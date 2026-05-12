@@ -67,10 +67,6 @@
                     <span><i class="iconfont icon-a-fenxiangweifenxiang"></i></span>
                     <span>分享到微博</span>
                   </div>
-                  <div class="share-option" @click="shareToTwitter">
-                    <span><i class="iconfont icon-a-fenxiangweifenxiang"></i></span>
-                    <span>分享到 Twitter</span>
-                  </div>
                 </div>
               </Teleport>
             </div>
@@ -467,13 +463,6 @@ function shareToWeibo() {
   const url = encodeURIComponent(window.location.href)
   const title = encodeURIComponent(article.value?.title || '')
   window.open(`https://service.weibo.com/share/share.php?url=${url}&title=${title}`, '_blank')
-  showShareDropdown.value = false
-}
-
-function shareToTwitter() {
-  const url = encodeURIComponent(window.location.href)
-  const text = encodeURIComponent(article.value?.title || '')
-  window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank')
   showShareDropdown.value = false
 }
 
