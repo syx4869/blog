@@ -1006,7 +1006,6 @@ function getAvatarInitial(name) {
 
 .share-dropdown {
   position: relative;
-  display: inline-block;
 }
 
 .share-menu {
